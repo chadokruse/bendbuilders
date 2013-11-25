@@ -14,14 +14,16 @@
     Bend Builders is an informal group of web developers, designers and all those in-between who:<br>
     <ol>
     	<li>Are based in Bend, OR (or want to get plugged in to the community here)</li>
-    	<li>Are working on building a startup, side project, or other entrepreneurial venture</li>
+    	<li>Are working on building an app, startup, side project, or other entrepreneurial venture</li>
     </ol>
   </p>
   <p>
-  	Our group is virtual and centered around a HipChat room. We do occasionally get together in person, but mostly last minute and always using the @all feature in HipChat (e.g. "Hey @all, I'm down at Deschutes hacking away on Meteor. Come on down if you're free.")
+  	Our group is virtual and centered around a HipChat room. We use it to help each other out on technical problems, provide UI/UX feedback, and generally just serve as soundboards for each other as we build our apps and businesses. 
   </p>
+  
   <p>
-  	To get the HipChat invite link, simply sign in with GitHub.<br>
+  	To view the HipChat invite link, simply sign in with GitHub
+  </p>
 
 </template>
 
@@ -30,9 +32,28 @@
 		{{#if currentUser}}
         	<a href="{{ Meteor.settings.public.hipchatURL }}">{{ Meteor.settings.public.hipchatURL }}</a>
     	{{else}}
-    		<!--TODO Delete Github token from db after X minutes-->
-        	<!--(We don't save the GitHub session or any profile info)--><br>
+    	<!--TODO Delete Github token from db after X minutes-->
+        <!--(We don't save the GitHub session or any profile info)--><br>
+ 		{{> faq }}
+    		
     	{{/if}}
 	</p>
+</template>
+
+<template name="faq">
+	<div class="faq"><strong>FREQUENTLY ASKED QUESTIONS</strong>
+		<p>
+		  	<b>Really? HipChat? I need to have yet another browser tab open?</b><br>
+		  	Not really. HipChat has a great @ mention feature that allows people to ping you offline to pull you in the room for a relevant discussion (e.g. "Hey @Robert, I've got a quick Node security question when you get a chance". If you decide to set up notifications, you'll get a push, text, or email with the message. We also use the feature to get together in person occasionally, usually last minute. For example, "Hey @all, I'm down at Deschutes hacking away on Meteor. Come on down if you're free." 
+		 </p>
+		 <p>
+		  	<b>I have an app idea and need a developer. Where can I find one?</b><br>
+		  	This group unfortunately isn't for you. We recommend doing a little networking at a <a href="http://www.edcoinfo.com/events/central-oregon-pubtalk/default.aspx">Pub Talk</a> or one of the many great <a href="http://www.meetup.com/find/?categories=34&radius=5&userFreeform=Bend%2C+OR&mcName=Bend%2C+OR&lat=44.0744&lon=-121.2574&sort=default">tech-focused meetups</a> in town.  
+		 </p>
+		 <p>
+		  	<b>What's with the crappy site design?</b><br>
+		  	Call it MVP :-) We'll probably get around to making the pixels look pretty some day, but if you've got time we'd certainly love a <a href="https://github.com/chadokruse/bendbuilders">pull request</a>.  
+		 </p>
+	</div>
 </template>
 
