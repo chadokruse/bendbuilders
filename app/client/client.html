@@ -1,0 +1,38 @@
+<head>
+  <title>Bend Builders</title>
+</head>
+
+<body>
+  <h1>Bend Builders</h1>
+  {{> welcome }}
+  {{loginButtons align="right"}}<br>
+  {{> hipchat }}
+</body>
+
+<template name="welcome">
+  <p>
+    Bend Builders is an informal group of web developers, designers and all those in-between who:<br>
+    <ol>
+    	<li>Are based in Bend, OR (or want to get plugged in to the community here)</li>
+    	<li>Are working on building a startup, side project, or other entrepreneurial venture</li>
+    </ol>
+  </p>
+  <p>
+  	Our group is virtual and centered around a HipChat room. We do occasionally get together in person, but mostly last minute and always using the @all feature in HipChat (e.g. "Hey @all, I'm down at Deschutes hacking away on Meteor. Come on down if you're free.")
+  </p>
+  <p>
+  	To get the HipChat invite link, simply sign in with GitHub.<br>
+
+</template>
+
+<template name="hipchat">
+	<p>
+		{{#if currentUser}}
+        	<a href="{{ Meteor.settings.public.hipchatURL }}">{{ Meteor.settings.public.hipchatURL }}</a>
+    	{{else}}
+    		<!--TODO Delete Github token from db after X minutes-->
+        	<!--(We don't save the GitHub session or any profile info)--><br>
+    	{{/if}}
+	</p>
+</template>
+
